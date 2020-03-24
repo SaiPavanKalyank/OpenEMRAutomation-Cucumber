@@ -2,12 +2,12 @@ Feature: Scenarios
 In order to check if the application is working as required
 Scenario: LoginValidCredential
 Given i have browser with openemrpage
-When I enter username as 'admin' and I enter password as 'pass'
+When I enter login details from Excel {string} with SheetName {string}
 Then I should access to the portal with title as 'OpenEMR'
 
  Scenario: invalidCredential
 Given I have browser with openemrpage
-When I enter wrong username as 'adm' and I enter wrong password as 'pas'
+When I enter wrong login details from Excel {string} with SheetName {string}
 Then Error message should be displayed as 'Invalid username or password'
 
 Scenario: createNewPatentError

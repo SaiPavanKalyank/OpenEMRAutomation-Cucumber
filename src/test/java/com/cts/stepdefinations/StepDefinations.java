@@ -1,5 +1,6 @@
 package com.cts.stepdefinations;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
@@ -11,6 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.cts.pages.DashboardPage;
 import com.cts.pages.LoginPage;
+import com.cts.utils.ReadExcel;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -30,10 +32,11 @@ public class StepDefinations {
 
 	}
 
-	@When("I enter username as {string} and I enter password as {string}")
-	public void i_enter_username_as_and_I_enter_physicianword_as(String string, String string2) {
-		LoginPage.enterUsername(driver, "admin");
-		LoginPage.enterPassword(driver, "pass");
+	@When("I enter login details from Excel \\{string} with SheetName \\{string}")
+	public void i_enter_login_details_from_Excel_with_SheetName() throws IOException {
+		String str[][] = ReadExcel.getSheetIntoStringArray("src/test/resources/Excel/openEMR.xlsx", "LoginValidCredential");
+		LoginPage.enterUsername(driver, str[0][0]);
+		LoginPage.enterPassword(driver, str[0][1]);
 		LoginPage.clickLogin(driver);
 
 	}
@@ -56,10 +59,14 @@ public class StepDefinations {
 	}
 
 
-@When("I enter wrong username as {string} and I enter wrong password as {string}")
-public void i_enter_wrong_username_as_and_I_enter_wrong_physicianword_as(String string, String string2) {
-		LoginPage.enterUsername(driver, "adm");
-		LoginPage.enterPassword(driver, "pas");
+@When("I enter wrong login details from Excel \\{string} with SheetName \\{string}")
+public void i_enter_wrong_login_details_from_Excel_with_SheetName() throws IOException {
+	String str[][] = ReadExcel.getSheetIntoStringArray("src/test/resources/Excel/openEMR.xlsx", "invalidCredential");
+		LoginPage.enterUsername(driver, str[0][0]);
+		LoginPage.enterPassword(driver, str[0][1]);
+		LoginPage.clickLogin(driver);
+		LoginPage.enterUsername(driver, str[1][0]);
+		LoginPage.enterPassword(driver, str[1][1]);
 		LoginPage.clickLogin(driver);
 
 	}
