@@ -8,6 +8,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DashboardPage {
+	private WebDriver driver;
+	 public DashboardPage(WebDriver driver) {
+			this.driver = driver;
+	 }
 	private static By patientLoc=By.xpath("//div[text()=('Patient/Client')]");
 	private static By newLoc=By.xpath("//div[text()=('New/Search')]");
 	private static By createLoc=By.id("create");
@@ -41,7 +45,7 @@ public class DashboardPage {
 	private static By logoutmoLoc=By.xpath("//span[text()='Smith']");
 	private static By logoutLoc=By.xpath("//li[text()='Logout']");
 	
-	public static void mouseOverOnPatient(WebDriver driver)
+	public  void mouseOverOnPatient()
 	{
 		WebElement searchEle = driver.findElement(patientLoc);
 		// searchEle.click();
@@ -49,53 +53,53 @@ public class DashboardPage {
 		Actions action = new Actions(driver);
 		action.moveToElement(searchEle).build().perform();
 	}
-	public static void clickOnNew(WebDriver driver)
+	public  void clickOnNew()
 	{
 	driver.findElement(newLoc).click();
 	}
-	public static void clickOnCreate(WebDriver driver) throws InterruptedException
+	public  void clickOnCreate() throws InterruptedException
 	{
 		driver.switchTo().frame("pat");
 		Thread.sleep(3000);
         driver.findElement(createLoc).click();
 	}
-	public static void clickOnRecallBoard(WebDriver driver)
+	public  void clickOnRecallBoard()
 	{
 		driver.findElement(recallLoc).click();
 	}
-	public static void clickOnNewRecall(WebDriver driver) throws InterruptedException
+	public  void clickOnNewRecall() throws InterruptedException
 	{
 		driver.switchTo().frame("rcb");
 	    Thread.sleep(3000);
 	    driver.findElement(newrecallLoc).click();
 	}
-	public static void clickOnName(WebDriver driver)
+	public  void clickOnName()
 	{
 		driver.switchTo().frame("recall");
 		driver.findElement(nameLoc).click();
 	}
-	public static void searchForName(WebDriver driver) 
+	public  void searchForName() 
 	{
 		//driver.switchTo().frame("modalframe");
 	    driver.findElement(searchnameLoc).sendKeys("belford");
 	}
-	public static void clickOnSearch(WebDriver driver) 
+	public  void clickOnSearch() 
 	{
 		
 	    driver.findElement(clickonsearchLoc).click();
 	}
-	public static void clickOnSearchResults(WebDriver driver)
+	public  void clickOnSearchResults()
 	{
 	    
 	    driver.findElement(clickonsearchresultsLoc).click();
 	}
-	public static void selectyears(WebDriver driver)
+	public  void selectyears()
 	{
 		driver.switchTo().frame("recall");
 		driver.findElement(recallwhenLoc).click();
 		
 	}
-	public static void enterdate(WebDriver driver) throws InterruptedException
+	public  void enterdate() throws InterruptedException
 	{
 		Thread.sleep(5000);
 		driver.switchTo().frame("recall");
@@ -104,26 +108,26 @@ public class DashboardPage {
 		driver.findElement(clickLoc).click();
 	}
 	
-	public static void clickOnAddRecall(WebDriver driver)
+	public  void clickOnAddRecall()
 	{
 		driver.findElement(addrecallLoc).click();
 	}
-	public static void clickOnFilter(WebDriver driver)
+	public  void clickOnFilter()
 	{
 		driver.findElement(filterLoc).click();
 	}
-	public static void waitforMessgElementpresence(WebDriver driver)
+	public  void waitforMessgElementpresence()
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 50);
 		wait.until(ExpectedConditions.presenceOfElementLocated(messgLoc));
 	}
 
-	public static String getCurrentTitle(WebDriver driver)
+	public  String getCurrentTitle()
 	{
 		String actualTitle = driver.getTitle();
 		return actualTitle;
 	}
-	public static void clickOnTime(WebDriver driver) throws InterruptedException
+	public  void clickOnTime() throws InterruptedException
 	{
 		Thread.sleep(5000);
 		driver.switchTo().frame("cal");
@@ -131,50 +135,50 @@ public class DashboardPage {
 		driver.findElement(timeLoc).click();
 		driver.switchTo().defaultContent();
 	}
-	public static void clickOnCategory(WebDriver driver) throws InterruptedException
+	public  void clickOnCategory() throws InterruptedException
 	{
         Thread.sleep(5000);
         driver.switchTo().frame("modalframe");
 		driver.findElement(categoryLoc).click();
 	}
-	public static void clickOnPatientName(WebDriver driver)
+	public  void clickOnPatientName()
 	{
 		driver.findElement(patientnameLoc).click();
 		//driver.switchTo().defaultContent();
 	}
-	public static void selectStatus(WebDriver driver)
+	public  void selectStatus()
 	{
 		driver.findElement(selectstatusLoc).click();
 	}
-	public static void selectRoom(WebDriver driver)
+	public  void selectRoom()
 	{
 		driver.findElement(selectroomLoc).click();
 	}
-	public static void clickOnSave(WebDriver driver)
+	public  void clickOnSave()
 	{
 		driver.findElement(saveLoc).click();
 	}
-	public static void clickonsearchappointment(WebDriver driver)
+	public  void clickonsearchappointment()
 	{
 		driver.findElement(appointmentsearchLoc).click();
 	}
-	public static void searchappointmentname(WebDriver driver)
+	public  void searchappointmentname()
 	{
 		driver.findElement(appointmentsearchnameLoc).sendKeys("bel");
 	}
-	public static void selectcategoryforappontmentsearch(WebDriver driver)
+	public  void selectcategoryforappontmentsearch()
 	{
 		driver.findElement(selectcategoryforappointmentsearchLoc).click();
 	}
-	public static void selectproviderforappointmentsearch(WebDriver driver)
+	public  void selectproviderforappointmentsearch()
 	{
 		driver.findElement(selectproviderforappointmentsearchLoc).click();
 	}
-	public static void selectfacilityforappointmentsearch(WebDriver driver)
+	public  void selectfacilityforappointmentsearch()
 	{
 		driver.findElement(selectfacilityforappointmentsearchLoc).click();
 	}
-	public static void clickonsubmitforappointmentsearch(WebDriver driver)
+	public  void clickonsubmitforappointmentsearch()
 	{
 		driver.findElement(submitforappointmentsearchLoc).click();
 	}
@@ -185,7 +189,7 @@ public class DashboardPage {
 	
 	
 	
-	public static void clickOnLogout(WebDriver driver)
+	public  void clickOnLogout()
 	{
 		WebElement lomEle = driver.findElement(logoutmoLoc);
 		Actions action = new Actions(driver);

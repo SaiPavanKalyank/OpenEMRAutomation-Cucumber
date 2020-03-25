@@ -34,5 +34,5 @@ Then Searched appointment should be displayed
 Scenario: Logout
 Given I have browser with openemrpage and loggedin
 When I click on logout
-Then It should be logged out
+Then I should go to the portal with title as 'OpenEMR Login'
 
