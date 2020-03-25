@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DashboardPage {
-	private WebDriver driver;
+	private WebDriver driver; 
 	 public DashboardPage(WebDriver driver) {
 			this.driver = driver;
 	 }
