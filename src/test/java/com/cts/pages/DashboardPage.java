@@ -17,38 +17,38 @@ public class DashboardPage {
 	 public DashboardPage(WebDriver driver) {
 			this.driver = driver;
 	 }
-	private static By patientLoc=By.xpath("//div[text()=('Patient/Client')]");
-	private static By newLoc=By.xpath("//div[text()=('New/Search')]");
-	private static By createLoc=By.id("create");
-	private static By recallLoc=By.xpath("//div[contains(text(),'Recall Board')]");
-	private static By newrecallLoc=By.xpath("//button[@class='btn btn-default btn-add']");
-	private static By nameLoc=By.xpath("//input[@id='new_recall_name']");
-	private static By searchnameLoc=By.xpath("//input[@name='searchparm']");
-	private static By clickonsearchLoc=By.xpath("//input[@id='submitbtn']");
-	private static By clickonsearchresultsLoc=By.xpath("//tbody[@id='searchResults']");
-	private static By recallwhenLoc=By.xpath("//label[@for='new_recall_when_1yr']");
-	private static By dateLoc=By.xpath("//input[@id='form_to_date']");
-	private static By addrecallLoc=By.id("add_new");
-	private static By timeLoc=By.partialLinkText("11:45");
-	private static By categoryLoc=By.xpath("(//select[@class='input-sm']/option)[5]");
-	private static By patientnameLoc=By.xpath("//input[@name='form_patient']");
-	private static By selectstatusLoc=By.xpath(("((//select[@class='form-control'])[2]/option)[15]"));
-	private static By selectroomLoc=By.xpath(("((//select[@class='form-control'])[3]/option)[3]"));
-	private static By saveLoc=By.id("form_save");
-	private static By filterLoc=By.id("filter_submit");
-	private static By clickLoc=By.xpath("//div[@class='container-fluid']");
-	private static By appointmentsearchLoc=By.xpath("//a[@title='Search Appointment']");
-	private static By appointmentsearchnameLoc=By.id("pc_keywords");
-	private static By selectcategoryforappointmentsearchLoc=By.xpath("(//select[@name='pc_category']/option)[5]");
-	private static By selectproviderforappointmentsearchLoc=By.xpath("(//select[@name='provider_id']/option)[3]");
-	private static By selectfacilityforappointmentsearchLoc=By.xpath("(//select[@name='pc_facility']/option)[2]");
-	private static By submitforappointmentsearchLoc=By.id("submit");
+	private  By patientLoc=By.xpath("//div[text()=('Patient/Client')]");
+	private  By newLoc=By.xpath("//div[text()=('New/Search')]");
+	private  By createLoc=By.id("create");
+	private  By recallLoc=By.xpath("//div[contains(text(),'Recall Board')]");
+	private  By newrecallLoc=By.xpath("//button[@class='btn btn-default btn-add']");
+	private  By nameLoc=By.xpath("//input[@id='new_recall_name']");
+	private  By searchnameLoc=By.xpath("//input[@name='searchparm']");
+	private  By clickonsearchLoc=By.xpath("//input[@id='submitbtn']");
+	private  By clickonsearchresultsLoc=By.xpath("//tbody[@id='searchResults']");
+	private  By recallwhenLoc=By.xpath("//label[@for='new_recall_when_1yr']");
+	private  By dateLoc=By.xpath("//input[@id='form_to_date']");
+	private  By addrecallLoc=By.id("add_new");
+	private  By timeLoc=By.partialLinkText("11:45");
+	private  By categoryLoc=By.xpath("(//select[@class='input-sm']/option)[5]");
+	private  By patientnameLoc=By.xpath("//input[@name='form_patient']");
+	private  By selectstatusLoc=By.xpath(("((//select[@class='form-control'])[2]/option)[15]"));
+	private  By selectroomLoc=By.xpath(("((//select[@class='form-control'])[3]/option)[3]"));
+	private  By saveLoc=By.id("form_save");
+	private  By filterLoc=By.id("filter_submit");
+	private  By clickLoc=By.xpath("//div[@class='container-fluid']");
+	private  By appointmentsearchLoc=By.xpath("//a[@title='Search Appointment']");
+	private  By appointmentsearchnameLoc=By.id("pc_keywords");
+	private  By selectcategoryforappointmentsearchLoc=By.xpath("(//select[@name='pc_category']/option)[5]");
+	private  By selectproviderforappointmentsearchLoc=By.xpath("(//select[@name='provider_id']/option)[3]");
+	private  By selectfacilityforappointmentsearchLoc=By.xpath("(//select[@name='pc_facility']/option)[2]");
+	private  By submitforappointmentsearchLoc=By.id("submit");
 	
 	
 	
-	private static By messgLoc = By.xpath("//div[text()='Messages']");
-	private static By logoutmoLoc=By.xpath("//span[text()='Smith']");
-	private static By logoutLoc=By.xpath("//li[text()='Logout']");
+	private  By messgLoc = By.xpath("//div[text()='Messages']");
+	private  By logoutmoLoc=By.xpath("//span[text()='Smith']");
+	private  By logoutLoc=By.xpath("//li[text()='Logout']");
 	
 	public  void mouseOverOnPatient()
 	{

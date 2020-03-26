@@ -11,11 +11,11 @@ public class LoginPage {
 			this.driver = driver;
 	 }
 	
-		private static By usernameLoc=By.id("authUser");
-		private static By passLoc=By.id("clearPass");
-		private static By languageLoc=By.name("languageChoice");
-		private static By clickLoginLoc=By.xpath("//button[@type='submit']");
-		private static By errormessgLoc=By.xpath("//div[@class='alert alert-danger login-failure m-1']");
+		private  By usernameLoc=By.id("authUser");
+		private  By passLoc=By.id("clearPass");
+		private  By languageLoc=By.name("languageChoice");
+		private  By clickLoginLoc=By.xpath("//button[@type='submit']");
+		private  By errormessgLoc=By.xpath("//div[@class='alert alert-danger login-failure m-1']");
 		public  void enterUsername(   String username)
 		{
 			driver.findElement(usernameLoc).sendKeys(username);

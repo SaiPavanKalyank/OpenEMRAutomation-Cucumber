@@ -26,13 +26,13 @@ public class StepDefinations {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.get("https://demo.openemr.io/b/openemr/interface/login/login.php?site=default");
+		driver.get("https://demo.openemr.io/a/openemr/interface/login/login.php?site=default");
 		// Write code here that turns the phrase above into concrete actions
 
 	}
 
-	@When("I enter login details from Excel \\{string} with SheetName \\{string}")
-	public void i_enter_login_details_from_Excel_with_SheetName() throws IOException {
+	@When("I enter login details from Excel {string} with SheetName {string}")
+	public void i_enter_login_details_from_Excel_with_SheetName(String filedetails, String sheetname) throws IOException {
 		String str[][] = ReadExcel.getSheetIntoStringArray("src/test/resources/Excel/openEMR.xlsx",
 				"LoginValidCredential");
 		// object for constructor
@@ -72,8 +72,8 @@ public class StepDefinations {
 
 	}
 
-	@When("I enter wrong login details from Excel \\{string} with SheetName \\{string}")
-	public void i_enter_wrong_login_details_from_Excel_with_SheetName() throws IOException {
+	@When("I enter wrong login details from Excel {string} with SheetName {string}")
+	public void i_enter_wrong_login_details_from_Excel_with_SheetName(String filedetails, String sheetname) throws IOException {
 		String str[][] = ReadExcel.getSheetIntoStringArray("src/test/resources/Excel/openEMR.xlsx",
 				"invalidCredential");
 		// object for constructor
