@@ -18,7 +18,7 @@ Then Error message should be displayed
 Scenario: recallBoard
 Given I have browser with openemrpage and loggedin
 When I click on recall board and enter details
-Then New recall should be created
+Then New recall should be created 
 
 
 Scenario: Create an appointment

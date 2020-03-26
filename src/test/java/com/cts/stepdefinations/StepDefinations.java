@@ -53,10 +53,12 @@ public class StepDefinations {
 		if (pageSource.toLowerCase().contains("openemr")) {
 			System.out.println("PASS");
 		} else {
-			System.out.println("FAIL");
+			Assert.fail("Not accessed to required portal");
 		}
+		DashboardPage dashboard = new DashboardPage(driver);
+		dashboard.tearDown();
 		
-		driver.quit();
+		
 
 	}
 
@@ -107,7 +109,8 @@ public class StepDefinations {
 		String expectedmessg = ("Invalid username or password");
 		//assert error message
 		Assert.assertEquals(actualmessg, expectedmessg);
-		driver.quit();
+		DashboardPage dashboard = new DashboardPage(driver);
+		dashboard.tearDown();
 
 	}
 
@@ -151,9 +154,10 @@ public class StepDefinations {
 		if (pageSourceforerror.toLowerCase().contains("not valid")) {
 			System.out.println("PASS");
 		} else {
-			System.out.println("FAIL");
+			Assert.fail("Error message not displayed");
 		}
-		driver.quit();
+		DashboardPage dashboard = new DashboardPage(driver);
+		dashboard.tearDown();
 	}
 
 	@When("I click on recall board and enter details")
@@ -204,9 +208,10 @@ public class StepDefinations {
 		if (pageSource.toLowerCase().contains("phil belford")) {
 			System.out.println("PASS");
 		} else {
-			System.out.println("FAIL");
+			Assert.fail("New Recall not created");
 		}
-		driver.quit();
+		DashboardPage dashboard = new DashboardPage(driver);
+		dashboard.tearDown();
 
 	}
 
@@ -254,9 +259,10 @@ public class StepDefinations {
 		if (pageSourcefornppointment.toLowerCase().contains("belford")) {
 			System.out.println("PASS");
 		} else {
-			System.out.println("FAIL");
+			Assert.fail("New Appointment not created");
 		}
-		driver.quit();
+		DashboardPage dashboard = new DashboardPage(driver);
+		dashboard.tearDown();
 
 	}
 
@@ -284,15 +290,18 @@ public class StepDefinations {
 	}
 
 	@Then("Searched appointment should be displayed")
-	public void searched_appointment_should_be_displayed() {
+	public void searched_appointment_should_be_displayed() throws InterruptedException {
 		// Write code here that turns the phrase above into concrete actions
+		Thread.sleep(5000);
 		String pageSourceforappointment = driver.getPageSource();
 		if (pageSourceforappointment.toLowerCase().contains("belford")) {
+			
 			System.out.println("PASS");
 		} else {
-			System.out.println("FAIL");
+			Assert.fail("Searched Appointment not dispalyed");
 		}
-		driver.quit();
+		DashboardPage dashboard = new DashboardPage(driver);
+		dashboard.tearDown();
 
 	}
 
@@ -307,16 +316,19 @@ public class StepDefinations {
 	}
 
 	@Then("I should go to the portal with title as {string}")
-	public void i_should_go_to_the_portal_with_title_as(String string) {
+	public void i_should_go_to_the_portal_with_title_as(String string) throws InterruptedException {
 		// Write code here that turns the phrase above into concrete actions
+		Thread.sleep(5000);
 		String pageSource = driver.getPageSource();
 		if (pageSource.toLowerCase().contains("openemr login")) {
+
 			System.out.println("PASS");
 		} else {
-			System.out.println("FAIL");
+			Assert.fail("I haven't redirected to required portal");
 		}
 		
-		driver.quit();
+		DashboardPage dashboard = new DashboardPage(driver);
+		dashboard.tearDown();
 	}
 
 }

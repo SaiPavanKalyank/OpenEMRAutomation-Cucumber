@@ -1,6 +1,11 @@
 package com.cts.pages;
 
+import java.io.File;
+import java.util.Date;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -164,7 +169,7 @@ public class DashboardPage {
 	}
 	public  void searchappointmentname()
 	{
-		driver.findElement(appointmentsearchnameLoc).sendKeys("bel");
+		driver.findElement(appointmentsearchnameLoc).sendKeys("belford");
 	}
 	public  void selectcategoryforappontmentsearch()
 	{
@@ -183,17 +188,19 @@ public class DashboardPage {
 		driver.findElement(submitforappointmentsearchLoc).click();
 	}
 	
-	
-	
-	
-	
-	
-	
 	public  void clickOnLogout()
 	{
 		WebElement lomEle = driver.findElement(logoutmoLoc);
 		Actions action = new Actions(driver);
 		action.moveToElement(lomEle).build().perform();
 		driver.findElement(logoutLoc).click();
+	}
+	public void tearDown() {
+		Date date=new Date();
+		String dateStr=date.toString().replace(":","-");
+		TakesScreenshot screenshot=(TakesScreenshot) driver;
+		File file=screenshot.getScreenshotAs(OutputType.FILE);
+		file.renameTo(new File("src/test/resources/screenshot/image_"+dateStr+".png"));
+		driver.quit();
 	}
 }

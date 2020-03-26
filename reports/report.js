@@ -212,7 +212,8 @@ formatter.match({
   "location": "com.cts.stepdefinations.StepDefinations.searched_appointment_should_be_displayed()"
 });
 formatter.result({
-  "status": "passed"
+  "error_message": "java.lang.AssertionError: Searched Appointment not dispalyed\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat com.cts.stepdefinations.StepDefinations.searched_appointment_should_be_displayed(StepDefinations.java:301)\r\n\tat ✽.Searched appointment should be displayed(file:///C:/Users/saipa/Desktop/OpenEmrBDD/src/main/resources/feature/OpenEMRScenario.feature:32)\r\n",
+  "status": "failed"
 });
 formatter.scenario({
   "name": "Logout",
